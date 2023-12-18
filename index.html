@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR test</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Araba QR</title>
 </head>
-<body><h1>Test</h1>
+<body>
+    <div class="cards">
+        <div class="card red">
+            <p class="tip">Araç için iletişim Numarası</p>
+            <button onclick="aramaYap()"id="callbutton" type="button" class="second-text">Ara</button>
+        </div>
+        <div class="card blue">
+            <p class="tip">Hover Me</p>
+            <p class="second-text">Lorem Ipsum</p>
+        </div>
+        <div class="card green">
+            <p class="tip">Hover Me</p>
+            <p class="second-text">Lorem Ipsum</p>
+        </div>
+    </div>  
 </body>
+<script>
+    function aramaYap() {
+        // Telefon numarası
+        var telefonNumarasi = "+905050409712"; // Burada kendi telefon numaranızı girin
+
+        // Telefon numarasını arama linkine çevir
+        var aramaLinki = "tel:" + telefonNumarasi;
+
+        // Arama linkini aç
+        window.location.href = aramaLinki;
+    }
+</script>
 </html>
