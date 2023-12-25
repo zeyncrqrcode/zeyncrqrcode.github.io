@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefon Numarası Kontrolü</title>
+</head>
+<body>
+    <label for="phoneNumber">Telefon Numarası:</label>
+    <input type="tel" id="phoneNumber" placeholder="Örneğin: 1234567890">
+    <button onclick="checkPhoneNumber()">Kontrol Et</button>
+
+    <script>
+        function checkPhoneNumber() {
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            fetch('/api/aravekontrol', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phoneNumber: phoneNumber })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // Burada sunucudan gelen yanıtı işleyebilirsiniz
+                alert(data.result);
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <title>QR</title>
+  <title>Document</title>
 </head>
-<body class="container">
-  <div class="flex">Merhaba</div>
+<body>
+  <div class="">
+    <div id="card" class="inline-flex text-center items-center justify-center bg-cyan-700 m w-full">
+      <div id="icon" class="flex right-0 py-1 px-3 mr-1"><img src="/public/car-solid.svg" alt="" srcset="">
+      </div>
+      <div class="inline-block">
+        <p class="pt-6 flex">Merhaba aracımın yanında değilim iletişim araya  bilirsiniz</p>
+        <button id="call"onclick="Call()" type="button" class="border-2 border-green-800 mb-3 bg-green-500 rounded-lg px-3 py-1 mt-2"> Arama için basınız</button>
+      </div>
+    </div>
+  </div>
 </body>
+<script src="post.js"></script>
+<script src="server.js"></script>
 </html>
